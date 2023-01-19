@@ -6,8 +6,11 @@
 	$passsword = $_POST['psw'];
 
 	$db = mysql_connect('', '', '') or die("Connection failure");
+	mysql_select_db("database", $db);
+	
+	$result = mysql_query('', $db);
 
-	if(mysql_num_rows(result) > 0)
+	if(mysql_num_rows($result) > 0)
 	{
 		$_SESSION['user'] = $login;
 		$_SESSION['psw'] = $password;
